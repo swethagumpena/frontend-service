@@ -1,0 +1,14 @@
+//colors
+$primary-background-color:#ADD2FF;
+$primary-text-color:#2382F6;
+
+//breakpoints
+$mobile-breakpoint:30rem;
+$ipad-breakpoint:48rem;
+$laptop-breakpoint:72rem;
+
+@mixin media-mixin($width){
+    @media (max-width: $width){
+        @content;
+    }
+}
