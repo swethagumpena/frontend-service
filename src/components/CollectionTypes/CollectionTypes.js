@@ -1,14 +1,15 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import styles from './CollectionTypes.module.css';
 
 const CollectionTypes = ({ handleClick, content }) => (
   <>
     <div>CollectionTypes</div>
-    <ul>
+    <ul role="menu">
       {content.map((collection) => (
-        <li role="presentation" onClick={() => handleClick(collection.typeName)}>
-          {collection.typeName}
+        <li role="presentation" className={styles.link} onClick={() => handleClick(collection.typeName)}>
+          <span>{collection.typeName}</span>
         </li>
       ))}
     </ul>

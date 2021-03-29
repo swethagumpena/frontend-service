@@ -1,0 +1,8 @@
+li span {
+    text-decoration: none;
+    cursor: pointer;
+  }
+li span:hover {
+    color: #00f;
+    text-decoration: underline;
+  }
