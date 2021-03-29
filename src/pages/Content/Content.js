@@ -2,7 +2,9 @@
 import React, { useEffect, useState } from 'react';
 import NavBar from '../../components/NavBar/NavBar';
 import CollectionTypes from '../../components/CollectionTypes/CollectionTypes';
-import { getContent } from '../../utils/api.utils';
+import ContentTypes from '../../components/ContentTypes/ContentTypes';
+import { getContent, createContentType } from '../../utils/api.utils';
+import styles from './Content.module.css';
 
 const Content = () => {
   const [content, setContent] = useState([]);
@@ -17,6 +19,12 @@ const Content = () => {
       setBuilder(false);
       setCollection(collectionType);
     }
+  };
+
+  const createNewContentType = async (typeName) => {
+    const created = await createContentType(typeName);
+    const updatedContent = [...content, { typeName: created.typeName }];
+    setContent(updatedContent);
   };
 
   useEffect(async () => {
@@ -43,10 +51,21 @@ const Content = () => {
       <NavBar
         header={header}
       />
-      <CollectionTypes
-        handleClick={handleClick}
-        content={content}
-      />
+      <div className={styles.ContainerBody}>
+        <div>
+          <CollectionTypes
+            handleClick={handleClick}
+            content={content}
+          />
+        </div>
+        <div>
+          <ContentTypes
+            content={content}
+            createNewContentType={createNewContentType}
+          />
+        </div>
+
+      </div>
     </>
   );
 };
