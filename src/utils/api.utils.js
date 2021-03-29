@@ -10,7 +10,6 @@ export const loginUser = async (userData) => {
   } catch (error) {
     console.log(error);
     if (error.response.status === 401) {
-      console.log('uaaa');
       throw new Error('email and password do not match');
     } else if (error.response.status === 500) {
       throw new Error('no user found with given email');

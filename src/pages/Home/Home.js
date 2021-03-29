@@ -2,6 +2,7 @@ import { useFormik } from 'formik';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { loginUser } from '../../utils/api.utils';
+import LoginSchema from '../../utils/validators/LoginSchema';
 
 const Home = () => {
   const history = useHistory();
@@ -36,7 +37,7 @@ const Home = () => {
 
   const formik = useFormik({
     initialValues: loginForm.formData,
-    // validationSchema: CheckoutSchema,
+    validationSchema: LoginSchema,
     onSubmit: async (formData) => {
     //   setLoading(true);
       await userLogin(formData);
@@ -51,7 +52,6 @@ const Home = () => {
   //       check = <div>email and password do not match</div>;
   //     }
   //   }
-  console.log('kk', error);
 
   return (
     <div>
