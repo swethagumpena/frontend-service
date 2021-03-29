@@ -3,12 +3,13 @@
 import React from 'react';
 import ContentTypeCard from '../ContentTypeCard/ContentTypeCard';
 import CreateNew from '../CreateNew/CreateNew';
+import styles from './ContentTypes.module.css';
 
-const ContentTypes = ({ content, createNewContentType }) => {
+const ContentTypes = ({ content, createNewContentType, handleClick }) => {
   const s = 'swe';
 
   return (
-    <>
+    <div className={styles.ContentTypesContainer}>
       <div>{`${content.length} Types`}</div>
       <CreateNew
         text="+ New Type"
@@ -20,10 +21,11 @@ const ContentTypes = ({ content, createNewContentType }) => {
           <ContentTypeCard
             typeName={component.typeName}
             fieldCount={field.length}
+            handleClick={handleClick}
           />
         );
-      })}
-    </>
+      }).reverse()}
+    </div>
   );
 };
 

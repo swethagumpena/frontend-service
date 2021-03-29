@@ -4,7 +4,7 @@ import './App.css';
 import './Normalize.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
-import ContentType from './pages/ContentType/ContentType';
+import Content from './pages/Content/Content';
 
 const App = () => {
   const [error, setError] = useState(null);
@@ -18,7 +18,7 @@ const App = () => {
             <Home />
           </Route>
           <Route path="/content">
-            <ContentType />
+            <Content />
           </Route>
         </Switch>
       </BrowserRouter>

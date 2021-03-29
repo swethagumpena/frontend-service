@@ -6,7 +6,7 @@ import {
 } from '@material-ui/core';
 
 const Modal = ({
-  title, children, openPopup, setOpenPopup, sequenceNo,
+  title, children, openPopup, setOpenPopup,
 }) => (
   <Dialog open={openPopup} maxWidth="md">
     <DialogTitle>
@@ -25,7 +25,6 @@ Modal.propTypes = {
   children: PropTypes.node.isRequired,
   openPopup: PropTypes.bool.isRequired,
   setOpenPopup: PropTypes.func.isRequired,
-  sequenceNo: PropTypes.number.isRequired,
 };
 
 export default Modal;

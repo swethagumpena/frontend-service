@@ -6,3 +6,25 @@ li span:hover {
     color: #00f;
     text-decoration: underline;
   }
+
+  .CollectionTypesContainer{
+    width: 295px;
+  height: 690px;
+  padding: 0 0 385px;
+  background-color: #272727;
+  }
+
+  .Collection{
+    width: 146px;
+    height: 20px;
+    margin: 42px 82px 24px 24px;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #b4b4b4;
+    margin: 0;
+  }
