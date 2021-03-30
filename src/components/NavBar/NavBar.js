@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './NavBar.module.css';
 
@@ -12,5 +12,9 @@ const NavBar = ({ header }) => (
     </div>
   </div>
 );
+
+NavBar.propTypes = {
+  header: PropTypes.string.isRequired,
+};
 
 export default NavBar;

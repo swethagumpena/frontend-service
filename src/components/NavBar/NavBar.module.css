@@ -5,7 +5,6 @@
 .AppNameContainer {
     width: 295px;
     height: 62px;
-    margin: 0 0 36px;
     padding: 16px 190px 12px 23px;
     background-color: #5904ce;
 }
@@ -13,8 +12,8 @@
 .AppName{
     width: 82px;
     height: 34px;
-    font-family: Montserrat;
-    font-size: 28px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -26,8 +25,7 @@
 
 .TitleContainer{
     width: 1145px;
-  height: 62px;
-  margin: 0 0 29px;
+  height: 52px;
   padding: 21px 960px 17px 32px;
   background-color: #ffffff;
 }
@@ -35,7 +33,7 @@
 .Title{
     width: 153px;
   height: 24px;
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   font-weight: bold;
   font-stretch: normal;
@@ -44,3 +42,4 @@
   letter-spacing: normal;
   color: #4f4f4f
 }
+

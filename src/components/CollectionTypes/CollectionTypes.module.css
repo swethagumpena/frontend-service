@@ -1,11 +1,43 @@
 li span {
-    text-decoration: none;
-    cursor: pointer;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 19px;
+  color: white;
+  width: 122px;
+  height: 20px;
+  margin: 24px 86px 18px 11px;
+  opacity: 0.4;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: #ffffff;
   }
 li span:hover {
-    color: #00f;
+    color:white;
     text-decoration: underline;
   }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    padding-left: 1em; 
+    text-indent: -.7em;
+  }
+  
+  li::before {
+    content: "• ";
+    color: white; 
+  }
+  
+ 
 
   .CollectionTypesContainer{
     width: 295px;
@@ -17,8 +49,7 @@ li span:hover {
   .Collection{
     width: 146px;
     height: 20px;
-    margin: 42px 82px 24px 24px;
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: bold;
     font-stretch: normal;
@@ -27,4 +58,18 @@ li span:hover {
     letter-spacing: normal;
     color: #b4b4b4;
     margin: 0;
+    padding: 2rem 0rem 1rem 2rem;
   }
+
+  .builderBtn{
+    background-color: #272727;
+    color: white;
+    width: 18rem;
+    height: 2.5rem;
+    border-color: #272727;
+    padding-right: 3.5rem;
+    margin-top: 2rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+  

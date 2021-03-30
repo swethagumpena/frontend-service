@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { loginUser } from '../../utils/api.utils';
 import LoginSchema from '../../utils/validators/LoginSchema';
+import styles from './Home.module.css';
 
 const Home = () => {
   const history = useHistory();
@@ -46,56 +47,48 @@ const Home = () => {
     },
   });
 
-  //   let check = null;
-  //   if (!loading && loginForm.submitted) {
-  //     if (error) {
-  //       check = <div>email and password do not match</div>;
-  //     }
-  //   }
-
   return (
-    <div>
-      <h1>
-        Login
-      </h1>
-      <>
-        <p>Enter your details</p>
-
+    <div className={styles.container}>
+      <div className={styles.contentLeft}>
+        <div className={styles.DesignText}>
+          Design APIs fast, Manage content easily.
+        </div>
+        <img className={styles.peopleImg} src="assets/home-people.svg" alt="home-people" />
+      </div>
+      <div className={styles.Rectangle}>
+        <div className={styles['Login-to-your-CMS-a']}>
+          Login to your CMS+ account
+        </div>
         <form onSubmit={formik.handleSubmit}>
           <label htmlFor="email">
-            Email:
+            <div className={styles.Email}>Email</div>
             <input
               name="email"
               type="email"
-              placeholder="Swetha"
               onChange={formik.handleChange}
             />
           </label>
           {formik.errors.email && (
-            <p>{formik.errors.email}</p>
+          <p>{formik.errors.email}</p>
           )}
 
           <label htmlFor="password">
-            Password:
+            <div className={styles.Password}>Password</div>
             <input
               name="password"
               type="password"
-                // placeholder="Gumpena"
               onChange={formik.handleChange}
             />
           </label>
           {formik.errors.password && (
-            <p>{formik.errors.password}</p>
+          <p>{formik.errors.password}</p>
           )}
           {error === 'email and password do not match' ? <div>email and password do not match</div> : <div />}
           {error === 'no user found with given email' ? <div>No user found with given email. Please register</div> : <div />}
-          {/* <div>
-            {check}
-          </div> */}
-          <button type="submit">Login</button>
+          <button className={styles.LoginButton} type="submit">Login</button>
+          <div className={styles.ForgotPassword}>Forgot Password?</div>
         </form>
-      </>
-
+      </div>
     </div>
   );
 };
