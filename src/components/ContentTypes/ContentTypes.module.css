@@ -2,8 +2,33 @@
     width: 337px;
   height: 800px;
   margin: 0 32px 0 0;
-  padding: 93px 32px 183px;
+  /* padding: 93px 32px 183px; */
   /* opacity: 0.1; */
   background-color: rgb(217, 211, 240);
 
+}
+
+.count {
+  width: 53px;
+  height: 18px;
+  margin: 1px 194px 17px 0;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #202020;
+  font-family: 'Montserrat', sans-serif;
+  padding: 2rem;
+}
+
+.createNew{
+  width: 273px;
+  height: 54px;
+  margin: 12px 0 8px;
+  padding: 18px 88px 17px 90px;
+  border-radius: 8px;
+  border: solid 1px #2f04ce;
+  background-color: rgba(255, 255, 255, 0.5);
 }
