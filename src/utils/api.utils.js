@@ -5,7 +5,6 @@ export const loginUser = async (userData) => {
   try {
     const { data } = await axios.post('http://localhost:7000/login', userData);
     return data;
-    // {token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZ…wMDR9.33mirrM-vrcYpEtElgES5BSM"}
   } catch (error) {
     if (error.response.status === 401) {
       throw new Error('email and password do not match');
@@ -29,4 +28,48 @@ export const getContent = async () => {
     },
   });
   return data.data;
+};
+
+export const createContentType = async (typeName) => {
+  const accessToken = getAuthToken();
+  const { data } = await axios.post('http://localhost:1337/content', { typeName }, {
+    headers: {
+      Authorization: accessToken,
+    },
+  });
+  return data.data;
+};
+
+export const getFields = async (typeName) => {
+  const accessToken = getAuthToken();
+  const { data } = await axios.get(`http://localhost:1337/content/${typeName}`, {
+    headers: {
+      Authorization: accessToken,
+    },
+  });
+  return data.data;
+};
+
+export const addField = async (field, typeName) => {
+  const accessToken = getAuthToken();
+  const { data } = await axios.post(`http://localhost:1337/content/${typeName}`, { field }, {
+    headers: {
+      Authorization: accessToken,
+    },
+  });
+  return data.data;
+};
+
+export const addValues = async (typeName, newObj) => {
+  const accessToken = getAuthToken();
+  try {
+    const data = await axios.put(`http://localhost:1337/instance/${typeName}`, { newObj }, {
+      headers: {
+        Authorization: accessToken,
+      },
+    });
+    return data;
+  } catch (error) {
+    throw new Error('Error from backend service');
+  }
 };

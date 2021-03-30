@@ -1,0 +1,12 @@
+.formData{
+    display: flex;
+    flex-direction: column;
+}
+
+.name{
+   
+}
+
+.inputField{
+   margin-bottom: 2rem;
+}

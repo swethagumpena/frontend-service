@@ -1,0 +1,36 @@
+.countValue{
+    width: 241px;
+  height: 34px;
+  margin: 29px 92px 32px 32px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4f4f4f;
+}
+
+.headerEle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addNew{
+    margin-right: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #2f04ce;;
+}
+
+.container{
+    background-color: #eaeeff;
+    height: 803px;
+    width: 1193px;
+}
+
+.fieldsNames{
+    display: flex;
+    justify-content: space-around;
+}
