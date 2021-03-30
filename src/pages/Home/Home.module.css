@@ -60,7 +60,7 @@ form {
     color: #ffffff;
   }
 
-  input {
+  .inputBox {
     width: 270px;
     height: 36px;
     margin: 8px 0 5px 0;

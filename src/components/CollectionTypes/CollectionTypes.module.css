@@ -41,9 +41,9 @@ li span:hover {
 
   .CollectionTypesContainer{
     width: 295px;
-  height: 690px;
-  padding: 0 0 385px;
-  background-color: #272727;
+    height: 416px;
+    padding: 0 0 385px;
+    background-color: #272727;
   }
 
   .Collection{

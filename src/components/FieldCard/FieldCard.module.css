@@ -1,0 +1,60 @@
+.fieldParent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right{
+    display: flex;
+    align-items: center;
+}
+
+.fieldContainer{
+    width: 700px;
+  height: 54px;
+  margin: 12px 32px;
+  padding: 0 32px 0 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+}
+
+.box{
+  width: 35px;
+    height: 22px;
+    margin: 0 12px 0 0;
+    padding: 17px 11px 15px 17px;
+    border-radius: 8px;
+    background-color: #7791ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputField{
+  width: 270px;
+    height: 36px;
+    margin: 8px 0 5px 0;
+    border-radius: 6px;
+    border: solid 0.8px white;
+    background-color: #fcfcfc;
+}
+
+.text{
+  width: 31px;
+    height: 18px;
+    opacity: 0.5;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #363636;
+    margin-right: 9rem;
+}
+
+.buttonEle{
+  margin-right: 0.5rem;
+}

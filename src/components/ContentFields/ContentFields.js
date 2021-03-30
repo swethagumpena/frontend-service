@@ -1,17 +1,15 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import FieldCard from '../FieldCard/FieldCard';
-import AddNewFieldCard from '../AddNewFieldCard/AddNewFieldCard';
-import { addField } from '../../utils/api.utils';
+import styles from './ContentFields.module.css';
 
 const ContentFields = ({
-  content, typeName, fields, handleClickField, fieldOnSaveHandler, editable, addNew,
+  typeName, fields, handleClickField, fieldOnSaveHandler, editable, addNew,
 }) => (
-  <>
-    <div>{typeName}</div>
-    <div>{`${fields.length} Fields`}</div>
-    <button type="button" onClick={handleClickField}>add new</button>
+  <div className={styles.container}>
+    <div className={styles.compTitle}>{typeName}</div>
+    <div className={styles.fieldLength}>{`${fields.length} Fields`}</div>
+    <button type="button" className={styles.addButton} onClick={handleClickField}>Add another field</button>
     {addNew ? (
       <FieldCard
         field=""
@@ -29,13 +27,16 @@ const ContentFields = ({
         typeName={typeName}
       />
     ))}
-  </>
+  </div>
 );
 
-// return (
-//   <>
-//   </>
-// );
-// };
+ContentFields.propTypes = {
+  typeName: PropTypes.string.isRequired,
+  fields: PropTypes.arrayOf(PropTypes.string).isRequired,
+  handleClickField: PropTypes.func.isRequired,
+  fieldOnSaveHandler: PropTypes.func.isRequired,
+  editable: PropTypes.bool.isRequired,
+  addNew: PropTypes.func.isRequired,
+};
 
 export default ContentFields;

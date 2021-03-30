@@ -40,9 +40,7 @@ const Home = () => {
     initialValues: loginForm.formData,
     validationSchema: LoginSchema,
     onSubmit: async (formData) => {
-    //   setLoading(true);
       await userLogin(formData);
-      //   setLoading(false);
       if (!error) setLoginForm({ formData, submitted: true });
     },
   });
@@ -63,6 +61,7 @@ const Home = () => {
           <label htmlFor="email">
             <div className={styles.Email}>Email</div>
             <input
+              className={styles.inputBox}
               name="email"
               type="email"
               onChange={formik.handleChange}
@@ -75,6 +74,7 @@ const Home = () => {
           <label htmlFor="password">
             <div className={styles.Password}>Password</div>
             <input
+              className={styles.inputBox}
               name="password"
               type="password"
               onChange={formik.handleChange}
