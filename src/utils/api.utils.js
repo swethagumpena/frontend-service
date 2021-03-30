@@ -73,3 +73,30 @@ export const addValues = async (typeName, newObj) => {
     throw new Error('Error from backend service');
   }
 };
+
+export const updateField = async (typeName, oldField, newField) => {
+  const accessToken = getAuthToken();
+  try {
+    const data = await axios.put(`http://localhost:1337/content/${typeName}`, { newField, oldField }, {
+      headers: {
+        Authorization: accessToken,
+      },
+    });
+    return data;
+  } catch (error) {
+    throw new Error('Error from backend service');
+  }
+};
+export const deleteField = async (typeName, oldField) => {
+  const accessToken = getAuthToken();
+  try {
+    const data = await axios.put(`http://localhost:1337/content/field/${typeName}`, { oldField }, {
+      headers: {
+        Authorization: accessToken,
+      },
+    });
+    return data;
+  } catch (error) {
+    throw new Error('Error from backend service');
+  }
+};

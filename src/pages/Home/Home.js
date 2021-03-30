@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useFormik } from 'formik';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
@@ -5,7 +6,7 @@ import { loginUser } from '../../utils/api.utils';
 import LoginSchema from '../../utils/validators/LoginSchema';
 import styles from './Home.module.css';
 
-const Home = () => {
+const Home = ({ loginHandleSubmit }) => {
   const history = useHistory();
   const [error, setError] = useState(null);
   //   const [loading, setLoading] = useState(false);
@@ -29,6 +30,7 @@ const Home = () => {
           'token',
           data.token,
         );
+        loginHandleSubmit();
       }
       history.push('/content');
     } catch (e) {

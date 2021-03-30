@@ -4,7 +4,10 @@ import FieldCard from '../FieldCard/FieldCard';
 import styles from './ContentFields.module.css';
 
 const ContentFields = ({
-  typeName, fields, handleClickField, fieldOnSaveHandler, editable, addNew,
+  typeName,
+  fields,
+  handleClickField,
+  fieldOnSaveHandler, editable, addNew, onDeleteHandler, onEditHandler,
 }) => (
   <div className={styles.container}>
     <div className={styles.compTitle}>{typeName}</div>
@@ -24,6 +27,8 @@ const ContentFields = ({
         field={eachField}
         editable={editable}
         fieldOnSaveHandler={fieldOnSaveHandler}
+        onDeleteHandler={onDeleteHandler}
+        onEditHandler={onEditHandler}
         typeName={typeName}
       />
     ))}
@@ -37,6 +42,8 @@ ContentFields.propTypes = {
   fieldOnSaveHandler: PropTypes.func.isRequired,
   editable: PropTypes.bool.isRequired,
   addNew: PropTypes.func.isRequired,
+  onDeleteHandler: PropTypes.func.isRequired,
+  onEditHandler: PropTypes.func.isRequired,
 };
 
 export default ContentFields;

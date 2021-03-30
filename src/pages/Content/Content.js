@@ -6,7 +6,7 @@ import CollectionTypes from '../../components/CollectionTypes/CollectionTypes';
 import ContentTypes from '../../components/ContentTypes/ContentTypes';
 import ContentFields from '../../components/ContentFields/ContentFields';
 import {
-  getContent, createContentType, getFields, addField, addValues,
+  getContent, createContentType, getFields, addField, addValues, deleteField, updateField,
 } from '../../utils/api.utils';
 import Instance from '../../components/Instance/Instance';
 import styles from './Content.module.css';
@@ -31,9 +31,11 @@ const Content = () => {
       setCollection(collectionType);
     }
   };
+
   const handleClickContent = async (contentType) => {
     setShouldRender(true);
     setIsActive(contentType);
+    setCollection(contentType);
     const fieldsList = await getFields(contentType);
     if (!fieldsList) {
       setFields([]);
@@ -54,7 +56,6 @@ const Content = () => {
   };
 
   const handleSave = async (valuesObj) => {
-    console.log(valuesObj, 'insde ');
     await addValues(collection, valuesObj);
   };
 
@@ -95,6 +96,15 @@ const Content = () => {
     // setSeqNumberNo(compLength);
     setContent(newComponents);
   }, []);
+
+  const onDeleteHandler = async (oldField) => {
+    console.log('ccd', collection);
+    await deleteField(collection, oldField);
+  };
+  const onEditHandler = async (oldField, newField) => {
+    console.log('ccu', collection);
+    await updateField(collection, oldField, newField);
+  };
 
   const header = builder ? 'Content Types' : collection;
   const type = isActive || '';
@@ -144,6 +154,8 @@ const Content = () => {
               // renderField={renderField}
               handleClickField={handleClickField}
               fieldOnSaveHandler={fieldOnSaveHandler}
+              onDeleteHandler={onDeleteHandler}
+              onEditHandler={onEditHandler}
               editable={editable}
               addNew={addNew}
             />

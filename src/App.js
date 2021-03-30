@@ -8,16 +8,25 @@ import Content from './pages/Content/Content';
 
 const App = () => {
   const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState('false');
+  const [loggedIn, setLoggedIn] = useState(false);
+  useEffect(() => {
+    setLoggedIn(false);
+  }, []);
+
+  const loginHandleSubmit = () => {
+    setLoggedIn(true);
+  };
 
   return (
     <>
       <BrowserRouter>
         <Switch>
-          <Route path="/" exact>
+          {loggedIn ? null : <Home loginHandleSubmit={loginHandleSubmit} />}
+
+          {/* <Route path="/" exact>
             <Home />
-          </Route>
-          <Route path="/content">
+          </Route> */}
+          <Route path="/content" exact>
             <Content />
           </Route>
         </Switch>

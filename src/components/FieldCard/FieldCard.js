@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import styles from './FieldCard.module.css';
 
 const FieldCard = ({
-  field, editable, fieldOnSaveHandler, typeName,
+  field, editable, fieldOnSaveHandler, onDeleteHandler, onEditHandler, typeName,
 }) => {
   const textInput = React.createRef();
-
+  const oldFieldValue = field;
   return (
     <div className={styles.fieldContainer}>
       <div className={styles.fieldParent}>
@@ -16,8 +16,8 @@ const FieldCard = ({
         </div>
         <div className={styles.text}>text</div>
         <div className={styles.left}>
-          <button className={styles.buttonEle} type="button">edit</button>
-          <button className={styles.buttonEle} type="button">delete</button>
+          <button className={styles.buttonEle} onClick={() => onEditHandler(oldFieldValue, textInput.current.value)} type="button">edit</button>
+          <button className={styles.buttonEle} onClick={() => onDeleteHandler(oldFieldValue)} type="button">delete</button>
           <button type="button" className={editable ? styles.saveBtn : styles.noSaveBtn} onClick={() => fieldOnSaveHandler(textInput.current.value, typeName)}>save</button>
         </div>
       </div>
@@ -30,6 +30,8 @@ FieldCard.propTypes = {
   editable: PropTypes.bool.isRequired,
   typeName: PropTypes.string.isRequired,
   fieldOnSaveHandler: PropTypes.func.isRequired,
+  onDeleteHandler: PropTypes.func.isRequired,
+  onEditHandler: PropTypes.func.isRequired,
 };
 
 export default FieldCard;
